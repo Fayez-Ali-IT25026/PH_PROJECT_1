@@ -1,6 +1,28 @@
 import Image from 'next/image';
 
-const MainNews = ({ mainNews }) => {
+
+ interface mainNewsType {
+    id:             string;
+    title:          string;
+    description:    string;
+    link:           string;
+    imageUrl:       string;
+    imageAlt:       string;
+    category:       string;
+    type:           string;
+    isLive:         boolean;
+    firstPublished: null;
+    lastPublished:  null;
+    source:         string;
+}
+
+
+
+
+
+
+
+const MainNews = ({ mainNews }: { mainNews: mainNewsType[] }) => {
 
 // Get the first news item
 // const firstNews = mainNews[0]; 
@@ -23,15 +45,13 @@ const [firstNews , ...otherNews] = mainNews;
     width={400}
     height={300}
         src={firstNews.imageUrl}
-      alt="Shoes" />
+      alt={firstNews.imageAlt} />
   </figure>
   <div className="card-body">
     <p className='text-red-600 font-semibold'>{firstNews.category}</p>
     <h2 className="card-title">{firstNews.title}</h2>
     <p>{firstNews.description}</p>
-    <div className="card-actions justify-end">
-      
-    </div>
+    
   </div>
 </div>
 
