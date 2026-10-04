@@ -1,7 +1,8 @@
-import NewsCard from "@/components/NewsCard";
+import NewsCard from "../components/NewsCard";
 import MainNews from "../components/MainNews";
 import Marquee from "../components/Marquee";
 import Image from "next/image";
+import MostRead from "../components/MostRead";
 
 
 
@@ -52,7 +53,7 @@ const heading = sections[0].articles;
 // const otherSections = sections.slice(1);
 
 const otherSections: mainNewsType[] = sections.slice(1);
-console.log(otherSections);
+// console.log(otherSections);
 
   return (
     <>
@@ -93,10 +94,12 @@ console.log(otherSections);
 
 
 {/* সর্বাধিক পঠিত Section */}
-<div className="col-span-1"></div>
+<div className="col-span-1"> 
+  
+  <MostRead />
+</div>
 
-
-
+  
     </div>
     </>
 )};
