@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Navlinks from "./Navlinks";
 
 
 
@@ -47,6 +48,8 @@ const date = new Date().toLocaleDateString("bn-BD", {
 
     </div>
   </nav>
+
+  <Navlinks />
 </div>
     );
 };
