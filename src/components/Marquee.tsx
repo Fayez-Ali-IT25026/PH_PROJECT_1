@@ -1,6 +1,37 @@
 import MarqueeText from "react-marquee-text"
 import "react-marquee-text/dist/styles.css"
 
+
+
+
+
+
+
+ 
+ interface MarqueeNews {
+    id:             string;
+    title:          string;
+    description:    string;
+    link:           string;
+    imageUrl:       string;
+    imageAlt:       string;
+    category:       string;
+    type:           string;
+    isLive:         boolean;
+    firstPublished: null;
+    lastPublished:  null;
+    source:         string;
+}
+
+
+
+
+
+
+
+
+
+
 const Marquee = async () => {
 
 
@@ -17,7 +48,7 @@ console.log(news);
     <p className="bg-red-800 text-white">সর্বশেষ</p>
     <MarqueeText direction="right" duration={10}>
 
-    {news.map((m: any) => (<span key={m.id}><span>{m.title}</span><span className='mx-5'>•</span></span>) )}
+    {news.map((m: MarqueeNews) => (<span key={m.id}><span>{m.title}</span><span className='mx-5'>•</span></span>) )}
 </MarqueeText>
 </div>
 
