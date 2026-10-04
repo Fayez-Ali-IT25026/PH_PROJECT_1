@@ -30,7 +30,7 @@ const navs = data.data;
 const filteredNavs = navs.filter((n: NavLink) => n.scrapable === true);
 // console.log(data);
 // console.log(navs);
-console.log(filteredNavs);
+// console.log(filteredNavs);
 
  return (
         <div className="flex justify-center gap-5 bg-gray-100 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8">
