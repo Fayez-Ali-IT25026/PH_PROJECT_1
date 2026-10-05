@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Marquee from "@/components/Marquee";
 
 const notoSerifBengali = Noto_Serif_Bengali({
   variable: "--font-geist-sans",
@@ -27,7 +28,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
-        {children}
+         <Marquee/>
+        <div className = "max-w-6xl mx-auto  px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
         </body>
     </html>
   );

@@ -18,7 +18,7 @@ const NewsCard = ({ article }: { article: mainNewsType }) => {
     return (
 
         //gird-cols will not work but grid will work . grid-cols have to apply on page.tsx on map side 
-        <div className = "grid gap-20 mt-5 grid-cols-3 ">
+        <div className = "grid gap-5 mt-5 grid-cols-3 ">
             <div className=" card bg-base-100 w-[250px] shadow-sm">
               <figure>
                 <Image
