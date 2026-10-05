@@ -42,7 +42,7 @@ const news = data.data;
 
 
     return (
-        <div className="bg-red-700 text-white  w-full px-4 sm:px-6 lg:px-8">
+        <div className="bg-red-700 text-white  w-full px-4 sm:px-6 lg:px-8 sticky top-0 z-50">
             
 <div className="flex items-center gap-2 py-1 overflow-hidden whitespace-nowrap max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8">
     <p className="bg-red-800 text-white ">সর্বশেষ</p>

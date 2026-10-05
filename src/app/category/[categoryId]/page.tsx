@@ -32,13 +32,21 @@ import NewsCard from "@/components/NewsCard";
 
 // export default CategoryNews;
 
-
+interface mainNewsType {
+    id:             string;
+    title:          string;
+    description:    string;
+    link:           string;
+    imageUrl:       string;
+    imageAlt:       string;
+    category:       string;
+}       
 
 
 
 //Your code is close. The main thing to check is categoryId vs catagoryId and what the API actually returns.
 
-const CategoryNews = async ({params}) => {
+const CategoryNews = async ({params}: { params: Promise<{ categoryId: string }> }) => {
 
 // const {catagoryId} = await params
 const {categoryId} = await params
@@ -52,12 +60,12 @@ const categoryData = data.data;
 
     return (
         <div>
-            <h2 className="font-bold text-3xl border-b-4 border-red-800">{data.title}</h2>
+            <h2 className="font-bold text-3xl border-b-4 border-red-800 mt-5">{data.title}</h2>
 
 
             <div className="grid grid-cols-3 ">
 
-{categoryData.map(cd => <NewsCard key={cd.id} article={cd} />)}
+{categoryData.map((cd: mainNewsType) => <NewsCard key={cd.id} article={cd} />)}
 
             </div>
         </div>
