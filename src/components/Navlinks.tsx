@@ -48,7 +48,24 @@ const filteredNavs = navs.filter((n: NavLink) => n.scrapable === true);
             {/* {navs.map((n,i) => <Link key={i} href={n.slug}>{n.title}</Link>)} */}
 
 
-            {filteredNavs.map((n: NavLink, i: number) => <Link key={i} href={n.slug}>{n.title}</Link>)}
+
+
+{/* update href from  */}
+            {/* {filteredNavs.map((n: NavLink, i: number) => <Link key={i} href={n.slug}>{n.title}</Link>)} */}
+
+
+
+
+
+             {/* {filteredNavs.map((n: NavLink, i: number) => <Link key={i} href={n.slug}>{category/'${n.title}'}</Link>)} */}
+
+
+             {/* {filteredNavs.map((n: NavLink, i: number) => <Link key={i} href={n.slug}>{'/category/${n.title}'}</Link>)} */}
+
+
+             
+             {filteredNavs.map((n: NavLink, i: number) => <Link key={i} href={`/category/${n.slug}`}>{n.title}</Link>)} 
+
 
 
         </div>

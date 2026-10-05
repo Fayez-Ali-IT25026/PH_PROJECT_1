@@ -58,7 +58,7 @@ const otherSections: mainNewsType[] = sections.slice(1);
   return (
     <>
     <Marquee/>
-    <div className="grid grid-cols-3 gap-5 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-3 gap-20 mt-3 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8">
 {/* main Section */}
 <div className="col-span-2">
 
