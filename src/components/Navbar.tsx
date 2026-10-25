@@ -1,9 +1,21 @@
+
+
 import Image from "next/image";
 import Navlinks from "./Navlinks";
+// import { Link } from "lucide-react";
+import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
 
 
 
 const Navbar = () => {
+
+
+// const handeleSignOut = () => {
+
+// authClient.signOut();
+
+// }
 
 
 // Get the current date in Bengali format new concept
@@ -37,14 +49,25 @@ const date = new Date().toLocaleDateString("bn-BD", {
 
       
       <div className="flex gap-2">
-        <button className="btn">
-          সাইন ইন
-        </button>
 
-        <button className="btn bg-red-700 text-white hover:bg-red-800">
-          সাইন আপ
-        </button>
-      </div>
+
+{/* <button onClick={handeleSignOut} className="bg-red-500 text-white rounded-3xl"></button> */}
+
+
+
+  <Link href="/signin" className="btn">
+    সাইন ইন
+   
+  </Link>
+
+  <Link
+    href="/signup"
+    className="btn bg-red-700 text-white hover:bg-red-800"
+  >
+    সাইন আপ
+   
+  </Link>
+</div>
 
     </div>
   </nav>

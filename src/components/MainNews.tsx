@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 
  interface mainNewsType {
@@ -39,6 +40,9 @@ const [firstNews , ...otherNews] = mainNews;
 
     return (
         <div className="flex  gap-10">
+           
+
+           <Link href={`/news/${firstNews.id}`}>
             <div className="card bg-base-100 w-96 shadow-sm">
   <figure>
     <Image
@@ -53,20 +57,43 @@ const [firstNews , ...otherNews] = mainNews;
     <p>{firstNews.description}</p>
     
   </div>
-</div>
+            </div>
+          </Link>
 
 
 
 
 
 
-<div className="grid  gap-2">
+       
+       
+        {/* <div className="grid  gap-2">
     {otherNews.slice(0, 4).map(on => <div key={on.id} className="card bg-base-100 w-96 py-5 shadow-sm border border-gray-300 my-2 gap-1">
  <p className='text-red-600 font-semibold'>{firstNews.category}</p>
         {on.title}
     </div>)}
+        </div> */}
 
-</div>
+
+
+          <div className="grid  gap-2">
+    {otherNews.slice(0, 4).map(on => (
+        
+        <Link key={on.id} href={`/news/${on.id}`}>
+        <div  className="card bg-base-100 w-96 py-5 shadow-sm border border-gray-300 my-2 gap-1">
+ <p className='text-red-600 font-semibold'>{firstNews.category}</p>
+        {on.title}
+    </div>
+        
+        </Link>
+    
+
+)
+    
+
+)}
+        </div>
+       
 
         </div>
     );
