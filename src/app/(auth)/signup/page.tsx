@@ -91,6 +91,18 @@ console.log(data);
 
   };
 
+
+  const handelGoogleSignUp = async () => {
+
+
+ const data = await authClient.signIn.social({
+    provider: "google",
+  });
+
+
+
+}
+
   return (
     <main className="min-h-screen bg-white text-slate-900">
       {/* Header */}
@@ -328,6 +340,7 @@ console.log(data);
           {/* Google Signup UI */}
           <button
             type="button"
+            onClick={handelGoogleSignUp}
             className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-red-200 hover:bg-red-50/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
           >
             <span className="text-xl font-extrabold text-blue-600">G</span>

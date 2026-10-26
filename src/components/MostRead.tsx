@@ -1,10 +1,16 @@
+import Link from 'next/link';
 import React from 'react';
+
+interface MostReadItem {
+    id: string;
+    title: string;
+}
 
 const MostRead = async () => {
 
 const res = await fetch("https://news-api-v2.vercel.app/api/news/most-read");
 const data = await res.json();
-const mostRead = data.data;
+const mostRead: MostReadItem[] = data.data;
 console.log(mostRead);
 
     return (
@@ -16,10 +22,15 @@ console.log(mostRead);
            <div className = "grid gap-2 mt-5 ">
             {
 
-mostRead.map((mr,i) => <div key={mr.id} className = "flex gap-5 justify-center items-center">
+mostRead.map((mr,i) => <Link key={mr.id}  href={`/news/${mr.id}`}>
+<div  className = "flex gap-5 justify-center items-center">
     <p className='font-bold text-red-700'>{i+1}</p>
     <h2 className='py-3'>{mr.title}</h2>
-</div>)
+</div>
+
+
+</Link>
+)
             }
            </div>
             

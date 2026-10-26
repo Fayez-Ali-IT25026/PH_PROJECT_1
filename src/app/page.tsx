@@ -24,8 +24,11 @@ interface mainNewsType {
         id:             string;
         title:          string;
         description:    string;
-        link:           string;   
-}
+        link:           string;
+        imageUrl:       string;
+        imageAlt:       string;
+        category:       string;
+}[]
 }
 
 

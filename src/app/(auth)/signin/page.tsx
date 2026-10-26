@@ -58,40 +58,58 @@ const SigninPage = () => {
     }
   };
 
-  const handleGoogleSignin = async () => {
-    setError("");
+//   const handleGoogleSignin = async () => {
 
-    try {
-      const { error } = await authClient.signIn.social({
-        provider: "google",
-        callbackURL: "/",
-      });
+//     setError("");
 
-      if (error) {
-        setError(error.message || "Google দিয়ে সাইন ইন করা যায়নি।");
-      }
-    } catch {
-      setError("Google সাইন ইন করতে সমস্যা হয়েছে।");
-    }
+//     try {
+//       const { error } = await authClient.signIn.social({
+//         provider: "google",
+//         callbackURL: "/",
+//       });
 
-
-
-
-const { data, error } = await authClient.signIn.email({
-    email: email,
-    password: password,
-    rememberMe: true,
-    callbackURL: "/"
-})
-
-
-
-console.log(data)
+//       if (error) {
+//         setError(error.message || "Google দিয়ে সাইন ইন করা যায়নি।");
+//       }
+//     } catch {
+//       setError("Google সাইন ইন করতে সমস্যা হয়েছে।");
+//     }
 
 
 
 
-  };
+// const { data, error } = await authClient.signIn.email({
+//     email: email,
+//     password: password,
+//     rememberMe: true,
+//     callbackURL: "/"
+// })
+
+
+
+// console.log(data)
+
+
+
+
+//   };
+
+
+
+
+const signIn = async () => {
+  const data = await authClient.signIn.social({
+    provider: "google",
+  });
+
+//  const data = await authClient.signIn.social({
+//         provider: "github"
+//     })
+
+};
+
+
+
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-10">
@@ -234,7 +252,7 @@ console.log(data)
           {/* Google Sign-in */}
           <button
             type="button"
-            onClick={handleGoogleSignin}
+            onClick={signIn}
             className="flex w-full items-center justify-center gap-3 rounded-xl border border-gray-300 py-3 font-semibold text-gray-700 transition hover:bg-gray-50"
           >
             <svg

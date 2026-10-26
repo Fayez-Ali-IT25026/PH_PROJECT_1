@@ -1,14 +1,23 @@
-
+// 'use client'
 
 import Image from "next/image";
 import Navlinks from "./Navlinks";
 // import { Link } from "lucide-react";
 import Link from "next/link";
-import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
+
+import AuthSSS from "./Auth";
 
 
 
 const Navbar = () => {
+
+//   const { 
+//         data: session, 
+       
+//     } = authClient.useSession() 
+
+// const user = session?.user
 
 
 // const handeleSignOut = () => {
@@ -55,7 +64,10 @@ const date = new Date().toLocaleDateString("bn-BD", {
 
 
 
-  <Link href="/signin" className="btn">
+ {/* {
+  user?<SignOut/>:<>
+  
+   <Link href="/signin" className="btn">
     সাইন ইন
    
   </Link>
@@ -67,6 +79,11 @@ const date = new Date().toLocaleDateString("bn-BD", {
     সাইন আপ
    
   </Link>
+  
+  </>
+ } */}
+<AuthSSS/>
+
 </div>
 
     </div>
