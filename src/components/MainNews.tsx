@@ -7,8 +7,9 @@ import Link from 'next/link';
     title:          string;
     description:    string;
     link:           string;
-    imageUrl:       string;
-    imageAlt:       string;
+    // API returns null for these on some articles
+    imageUrl:       string | null;
+    imageAlt:       string | null;
     category:       string;
     type:           string;
     isLive:         boolean;
@@ -44,13 +45,16 @@ const [firstNews , ...otherNews] = mainNews;
 
            <Link href={`/news/${firstNews.id}`}>
             <div className="card bg-base-100 w-96 shadow-sm">
+  {/* skip the figure when the API gives no image, and fall back to the headline as alt text */}
+  {firstNews.imageUrl && (
   <figure>
     <Image
     width={400}
     height={300}
         src={firstNews.imageUrl}
-      alt={firstNews.imageAlt} />
+      alt={firstNews.imageAlt || firstNews.title} />
   </figure>
+  )}
   <div className="card-body">
     <p className='text-red-600 font-semibold'>{firstNews.category}</p>
     <h2 className="card-title">{firstNews.title}</h2>

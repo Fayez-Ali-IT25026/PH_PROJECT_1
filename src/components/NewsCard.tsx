@@ -7,8 +7,9 @@ interface mainNewsType {
     title:          string;
     description:    string;
     link:           string;
-    imageUrl:       string;
-    imageAlt:       string;
+    // API returns null for these on some articles
+    imageUrl:       string | null;
+    imageAlt:       string | null;
     category:       string;
 }
 
@@ -44,14 +45,17 @@ const NewsCard = ({ article }: { article: mainNewsType }) => {
                 
 
                 <Link href={`/news/${article.id}`}>
-                
+
+                {/* skip the figure when the API gives no image, and fall back to the headline as alt text */}
+                {article.imageUrl && (
                 <figure>
                 <Image
                 width={400}
                 height={300}
                     src={article.imageUrl}
-                  alt={article.imageAlt} />
+                  alt={article.imageAlt || article.title} />
               </figure>
+                )}
               <div className="card-body">
                 <p className='text-red-600 font-semibold'>{article.category}</p>
                 <h2 className="card-title">{article.title}</h2>

@@ -25,8 +25,9 @@ interface mainNewsType {
         title:          string;
         description:    string;
         link:           string;
-        imageUrl:       string;
-        imageAlt:       string;
+        // API returns null for these on some articles
+        imageUrl:       string | null;
+        imageAlt:       string | null;
         category:       string;
 }[]
 }

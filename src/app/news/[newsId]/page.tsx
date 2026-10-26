@@ -67,15 +67,18 @@ const page = async ({ params }: { params: { newsId: string } }) => {
                 )}
             </p>
 
+            {/* only render the hero when the API actually returns an image */}
+            {newsData.imageUrl && (
             <div className="mb-8 overflow-hidden rounded-xl">
                 <Image
                     width={900}
                     height={500}
                     src={newsData.imageUrl}
-                    alt={newsData.title}
+                    alt={newsData.imageAlt || newsData.title}
                     className="h-auto w-full object-cover"
                 />
             </div>
+            )}
 
             <div className="rounded-xl bg-white p-6 shadow-sm md:p-10">
                 <p className="whitespace-pre-line text-lg leading-9 text-gray-800">
